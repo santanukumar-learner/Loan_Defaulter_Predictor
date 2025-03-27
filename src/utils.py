@@ -3,7 +3,7 @@ import os
 import sys
 # import pandas as pd
 import pickle
-from src.exception import CustomException
+from src.Exception.exception import CustomException
 # import dill
 from sklearn.metrics import r2_score
 from sklearn.model_selection import GridSearchCV
