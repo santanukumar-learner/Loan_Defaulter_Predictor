@@ -7,4 +7,6 @@ seaborn
 pymongo[srv]==3.11
 pymongo
 dotenv
+dill
+pyaml
 -e .

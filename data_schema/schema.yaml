@@ -1,0 +1,38 @@
+loan_amnt: float64
+int_rate: float64
+installment: float64
+sub_grade: float64
+annual_inc: float64
+open_acc: float64
+pub_rec: float64
+revol_bal: float64
+revol_util: float64
+total_acc: int32
+pub_rec_bankruptcies: float64
+debt_to_income_ratio: float64
+credit_history_length: float64
+verification_status: int32
+
+home_ownership:
+  MORTGAGE: bool
+  OWN: bool
+  RENT: bool
+
+ term:
+  36 months: bool
+  60 months: bool
+
+purpose:
+  car: bool
+  credit_card: bool
+  debt_consolidation: bool
+  educational: bool
+  home_improvement: bool
+  medical: bool
+  other: bool
+  small_business: bool
+
+application_type:
+  DIRECT_PAY: bool
+  INDIVIDUAL: bool
+  JOINT: bool

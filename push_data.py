@@ -26,7 +26,7 @@ class DataExtractor:
         try:
             df = pd.read_csv(file_path)
             df.reset_index(drop=True, inplace=True)
-            records = df.to_dict(orient="records")  # ✅ Fix: Convert rows into list of dicts
+            records = df.to_dict(orient="records")  
             return records
         except Exception as e:
             raise CustomException(e, sys)
@@ -36,7 +36,6 @@ class DataExtractor:
             if not isinstance(records, list):
                 raise ValueError("Records must be a list of dictionaries.")
 
-            # Ensure records are dictionaries
             records = [dict(record) if not isinstance(record, dict) else record for record in records]
 
             self.mongo_client = pymongo.MongoClient(
@@ -50,7 +49,7 @@ class DataExtractor:
             self.database = self.mongo_client[database]
             self.collection = self.database[collection]
 
-            # ✅ Insert in batches
+      
             for i in range(0, len(records), batch_size):
                 batch = records[i:i + batch_size]
                 self.collection.insert_many(batch)
